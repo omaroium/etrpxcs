@@ -26,7 +26,8 @@ db=firebase.database()
 #Initialize Firebase
 
 
-
+@app.route('/', methods=['GET', 'POST'])
+def question():
     error = ""
     if request.method == 'POST':
             error = "Authentication failed"
