@@ -48,6 +48,13 @@ def survey():
             error = "Authentication failed"
     return render_template("question.html")
 
+@app.route('/display', methods=['GET', 'POST'])
+def display():
+    error = ""
+    if request.method == 'POST':
+            error = "Authentication failed"
+    return render_template("display.html")
+
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
