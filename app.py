@@ -16,7 +16,7 @@ Config = {
   "storageBucket": "entrpxcs.appspot.com",
   "messagingSenderId": "200107293232",
   "appId": "1:200107293232:web:77d0ecb423c4e82ed90bf5",
-  "measurementId": "G-LT58HQDH4E"
+  "measurementId": "G-LT58HQDH4E",
   "databaseURL":"https://entrpxcs-default-rtdb.europe-west1.firebasedatabase.app/"
 
 }
@@ -31,6 +31,9 @@ def question():
     error = ""
     if request.method == 'POST':
             error = "Authentication failed"
-    return render_template("question.html")
+    return render_template("index.html")
+
+if __name__ == "__main__":  # Makes sure this is the main process
+    app.run(debug=True)
 
 
