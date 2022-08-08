@@ -41,6 +41,13 @@ def findus():
             error = "Authentication failed"
     return render_template("index.html")
 
+@app.route('/questions', methods=['GET', 'POST'])
+def survey():
+    error = ""
+    if request.method == 'POST':
+            error = "Authentication failed"
+    return render_template("question.html")
+
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
