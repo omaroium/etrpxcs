@@ -54,8 +54,9 @@ def survey():
 def display():
     error = ""
     if request.method == 'POST':
+
             error = "Authentication failed"
-    return render_template("display.html")
+    return render_template("display.html",answers=db.child('Answers').child().get().val())
 
 
 if __name__ == "__main__":  # Makes sure this is the main process
