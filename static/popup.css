@@ -79,3 +79,18 @@
   from {opacity: 0} 
   to {opacity: 1}
 }
+.cont{
+  text-align: left;
+  padding-left: 10px;
+  padding 2px,16px;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-blend-mode: normal;
+  border-style: solid;
+   font-family: Helvetica, sans-serif;
+    border-radius: 5px;
+
+}
+#myBtn{
+margin-left: 40%;
+}
