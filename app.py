@@ -27,11 +27,36 @@ db=firebase.database()
 
 
 @app.route('/', methods=['GET', 'POST'])
-def question():
+def home():
+    error = ""
+    if request.method == 'POST':
+            error = "Authentication failed"
+    return render_template("home.html")
+
+
+@app.route('/findus', methods=['GET', 'POST'])
+def findus():
     error = ""
     if request.method == 'POST':
             error = "Authentication failed"
     return render_template("index.html")
+
+@app.route('/questions', methods=['GET', 'POST'])
+def survey():
+    error = ""
+    if request.method == 'POST':
+        answers={"i":request.form['i'],"ii":request.form['ii'], "iii":request.form['iii'],"iiii":request.form['iiii'],"s":request.form['s'], "si":request.form['paragraph_text']}
+        db.child("Answers").push(answers)
+        return redirect(url_for('home'))
+    return render_template("question.html")
+
+@app.route('/display', methods=['GET', 'POST'])
+def display():
+    error = ""
+    if request.method == 'POST':
+            error = "Authentication failed"
+    return render_template("display.html")
+
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
