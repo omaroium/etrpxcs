@@ -6,7 +6,7 @@ from datetime import datetime
 tweet={}
 
 
-app = Flask(__name__, template_folder='templates', static_folder='static2')
+app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
 Config = {
