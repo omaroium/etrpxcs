@@ -45,7 +45,9 @@ def findus():
 def survey():
     error = ""
     if request.method == 'POST':
-            error = "Authentication failed"
+        answers={"i":request.form['i'],"ii":request.form['ii'], "iii":request.form['iii'],"iiii":request.form['iiii'],"s":request.form['s'], "si":request.form['paragraph_text']}
+        db.child("Answers").push(answers)
+        return redirect(url_for('home'))
     return render_template("question.html")
 
 @app.route('/display', methods=['GET', 'POST'])
